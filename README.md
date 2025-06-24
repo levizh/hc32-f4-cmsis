@@ -1,1 +1,1 @@
-# hc32-cmsis
+# hc32-f4-cmsis
