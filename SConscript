@@ -3,6 +3,7 @@ from building import *
 
 # get current directory
 cwd = GetCurrentDir()
+path = [cwd + '/Include']
 
 # The set of source files associated with this SConscript file.
 
@@ -19,7 +20,7 @@ if GetDepend(['SOC_HC32F4A0SI']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f4a0/Source/IAR/startup_hc32f4a0.s']
 
-    path = [cwd + '/Device/HDSC/hc32f4a0/Include']
+    path += [cwd + '/Device/HDSC/hc32f4a0/Include']
 
 elif GetDepend(['SOC_HC32F448MC']):
 
@@ -34,7 +35,7 @@ elif GetDepend(['SOC_HC32F448MC']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f448/Source/IAR/startup_hc32f448.s']
 
-    path = [cwd + '/Device/HDSC/hc32f448/Include']
+    path += [cwd + '/Device/HDSC/hc32f448/Include']
 
 elif GetDepend(['SOC_HC32F4A8SI']):
 
@@ -49,7 +50,7 @@ elif GetDepend(['SOC_HC32F4A8SI']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f4a8/Source/IAR/startup_hc32f4a8.s']
 
-    path = [cwd + '/Device/HDSC/hc32f4a8/Include']
+    path += [cwd + '/Device/HDSC/hc32f4a8/Include']
 
 elif GetDepend(['SOC_HC32F460PE']):
 
@@ -64,7 +65,7 @@ elif GetDepend(['SOC_HC32F460PE']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f460/Source/IAR/startup_hc32f460.s']
 
-    path = [cwd + '/Device/HDSC/hc32f460/Include']
+    path += [cwd + '/Device/HDSC/hc32f460/Include']
 
 elif GetDepend(['SOC_HC32F472MC']):
 
@@ -79,7 +80,7 @@ elif GetDepend(['SOC_HC32F472MC']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f472/Source/IAR/startup_hc32f472.s']
 
-    path = [cwd + '/Device/HDSC/hc32f472/Include']
+    path += [cwd + '/Device/HDSC/hc32f472/Include']
 
 elif GetDepend(['SOC_HC32F334KA']):
 
@@ -94,9 +95,7 @@ elif GetDepend(['SOC_HC32F334KA']):
     elif rtconfig.PLATFORM in ['iccarm']:
         src += ['Device/HDSC/hc32f334/Source/IAR/startup_hc32f334.s']
 
-    path = [cwd + '/Device/HDSC/hc32f334/Include']
-    
-path += ['Include']
+    path += [cwd + '/Device/HDSC/hc32f334/Include']
 
 CPPDEFINES = ['USE_DDL_DRIVER']
 
