@@ -1,6 +1,6 @@
 /*###ICF### Section handled by ICF editor, don't touch! ****/
 /*-Editor annotation file-*/
-/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_4.xml" */
+/* IcfEditorFile="$TOOLKIT_DIR$/config/ide/IcfEditor/cortex_v1_4.xml" */
 /*-Specials-*/
 define symbol __ICFEDIT_intvec_start__ = 0x1FFE0000;
 /*-Memory Regions-*/

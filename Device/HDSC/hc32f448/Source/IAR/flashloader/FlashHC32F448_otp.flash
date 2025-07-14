@@ -5,6 +5,6 @@
   <page>4</page>
   <block>1 0x400</block>
   <flash_base>0x03000C00</flash_base>
-  <macro>./FlashHC32F448_otp.mac</macro>
+  <macro>./FlashHC32F448.mac</macro>
   <aggregate>0</aggregate>
 </flash_device>
