@@ -9,8 +9,4 @@
     <loader>./FlashHC32F460_otp.flash</loader>
     <range>CODE 0x03000C00 0x03000FFB</range>
   </pass>
-  <pass>
-    <loader>./FlashHC32F460_qspi.flash</loader>
-    <range>CODE 0x98000000 0x987FFFFF</range>
-  </pass>
 </flash_board>
