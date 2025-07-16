@@ -6,9 +6,10 @@
 ;  Change Logs:
 ;  Date             Author          Notes
 ;  2022-03-31       CDT             First version
+;  2024-11-08       CDT             Added code of clear SRAMC status flags
 ; endverbatim
 ; *****************************************************************************
-; * Copyright (C) 2022-2023, Xiaohua Semiconductor Co., Ltd. All rights reserved.
+; * Copyright (C) 2022-2025, Xiaohua Semiconductor Co., Ltd. All rights reserved.
 ; *
 ; * This software component is licensed by XHSC under BSD 3-Clause license
 ; * (the "License"); You may not use this file except in compliance with the
@@ -223,6 +224,10 @@ Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]
                 IMPORT  SystemInit
                 IMPORT  __main
+;ClrSramSR
+                LDR     R0, =0x40050810
+                LDR     R1, =0x1FF
+                STR     R1, [R0]
 
                 LDR     R0, =SystemInit
                 BLX     R0
@@ -265,11 +270,13 @@ DebugMon_Handler\
                 EXPORT  DebugMon_Handler          [WEAK]
                 B       .
                 ENDP
-PendSV_Handler  PROC
+PendSV_Handler\
+                PROC
                 EXPORT  PendSV_Handler            [WEAK]
                 B       .
                 ENDP
-SysTick_Handler PROC
+SysTick_Handler\
+                PROC
                 EXPORT  SysTick_Handler           [WEAK]
                 B       .
                 ENDP

@@ -1,18 +1,24 @@
-;/*****************************************************************************
-; * Copyright (C) 2022-2023, Xiaohua Semiconductor Co., Ltd. All rights reserved.
+;/**
+; ******************************************************************************
+;  @file  startup_hc32f4a0.S
+;  @brief Startup for GCC.
+; verbatim
+;  Change Logs:
+;  Date             Author          Notes
+;  2022-03-31       CDT             First version
+;  2024-11-08       CDT             Remove code of stack initialization
+;                                   Call static constructors for C++
+; endverbatim
+; *****************************************************************************
+; * Copyright (C) 2022-2025, Xiaohua Semiconductor Co., Ltd. All rights reserved.
 ; *
 ; * This software component is licensed by XHSC under BSD 3-Clause license
 ; * (the "License"); You may not use this file except in compliance with the
 ; * License. You may obtain a copy of the License at:
 ; *                    opensource.org/licenses/BSD-3-Clause
 ; *
+; ******************************************************************************
 ; */
-/*****************************************************************************/
-/*  Startup for GCC                                                          */
-/*  Version     V1.0                                                         */
-/*  Date        2022-03-31                                                   */
-/*  Target-mcu  HC32F4A0                                                     */
-/*****************************************************************************/
 
 /*
 ;//-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
@@ -258,20 +264,9 @@ Reset_Handler:
  *
  * All addresses must be aligned to 4 bytes boundary.
  */
-StackInit:
-                ldr         r1, =__StackLimit
-                ldr         r2, =__StackTop
-
-                movs        r0, 0
-StackInitLoop:
-                cmp         r1, r2
-                itt         lt
-                strlt       r0, [r1], #4
-                blt         StackInitLoop
-
 ClrSramSR:
                 ldr         r0, =0x40050810
-                movw        r1, #0x1FF
+                ldr         r1, =0x1FF
                 str         r1, [r0]
 
                 /* Copy data from read only memory to RAM. */
@@ -338,6 +333,8 @@ ClearLoop1:
                 strlt       r0, [r1], #4
                 blt         ClearLoop1
 
+                /* Call static constructors */
+                bl          __libc_init_array
                 /* Call the clock system initialization function. */
                 bl          SystemInit
                 /* Call the application's entry point. */

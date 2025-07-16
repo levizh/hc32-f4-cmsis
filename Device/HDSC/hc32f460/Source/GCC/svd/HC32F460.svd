@@ -3914,8 +3914,8 @@
             </addressBlock>
         </peripheral>
         <peripheral>
-            <name>CMPCR</name>
-            <description>desc CMPCR</description>
+            <name>CMP_COMMON</name>
+            <description>desc CMP_COMMON</description>
             <baseAddress>0x4004A000</baseAddress>
             <alternatePeripheral>CMP1</alternatePeripheral>
             <addressBlock>
@@ -5107,97 +5107,6 @@
             </addressBlock>
             <registers>
                 <register>
-                    <name>AUTHID0</name>
-                    <description>desc AUTHID0</description>
-                    <addressOffset>0x0</addressOffset>
-                    <size>32</size>
-                    <access>read-write</access>
-                    <resetValue>0x0</resetValue>
-                    <resetMask>0xFFFFFFFF</resetMask>
-                </register>
-                <register>
-                    <name>AUTHID1</name>
-                    <description>desc AUTHID1</description>
-                    <addressOffset>0x4</addressOffset>
-                    <size>32</size>
-                    <access>read-write</access>
-                    <resetValue>0x0</resetValue>
-                    <resetMask>0xFFFFFFFF</resetMask>
-                </register>
-                <register>
-                    <name>AUTHID2</name>
-                    <description>desc AUTHID2</description>
-                    <addressOffset>0x8</addressOffset>
-                    <size>32</size>
-                    <access>read-write</access>
-                    <resetValue>0x0</resetValue>
-                    <resetMask>0xFFFFFFFF</resetMask>
-                </register>
-                <register>
-                    <name>MCUSTAT</name>
-                    <description>desc MCUSTAT</description>
-                    <addressOffset>0x10</addressOffset>
-                    <size>32</size>
-                    <access>read-write</access>
-                    <resetValue>0x0</resetValue>
-                    <resetMask>0xD</resetMask>
-                    <fields>
-                        <field>
-                            <name>AUTHFG</name>
-                            <description>desc AUTHFG</description>
-                            <msb>0</msb>
-                            <lsb>0</lsb>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>PRTLV1</name>
-                            <description>desc PRTLV1</description>
-                            <msb>2</msb>
-                            <lsb>2</lsb>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>PRTLV2</name>
-                            <description>desc PRTLV2</description>
-                            <msb>3</msb>
-                            <lsb>3</lsb>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>FERSCTL</name>
-                    <description>desc FERSCTL</description>
-                    <addressOffset>0x18</addressOffset>
-                    <size>32</size>
-                    <access>read-write</access>
-                    <resetValue>0x0</resetValue>
-                    <resetMask>0x7</resetMask>
-                    <fields>
-                        <field>
-                            <name>ERASEREQ</name>
-                            <description>desc ERASEREQ</description>
-                            <msb>0</msb>
-                            <lsb>0</lsb>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>ERASEACK</name>
-                            <description>desc ERASEACK</description>
-                            <msb>1</msb>
-                            <lsb>1</lsb>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>ERASEERR</name>
-                            <description>desc ERASEERR</description>
-                            <msb>2</msb>
-                            <lsb>2</lsb>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
                     <name>MCUDBGSTAT</name>
                     <description>desc MCUDBGSTAT</description>
                     <addressOffset>0x1C</addressOffset>
@@ -5433,7 +5342,7 @@
                     <description>desc FLAG</description>
                     <addressOffset>0x4</addressOffset>
                     <size>32</size>
-                    <access>read-only</access>
+                    <access>write-only</access>
                     <resetValue>0x0</resetValue>
                     <resetMask>0x7F</resetMask>
                     <fields>
@@ -5442,49 +5351,49 @@
                             <description>desc FLAG_OP</description>
                             <msb>0</msb>
                             <lsb>0</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_LS2</name>
                             <description>desc FLAG_LS2</description>
                             <msb>1</msb>
                             <lsb>1</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_EQ2</name>
                             <description>desc FLAG_EQ2</description>
                             <msb>2</msb>
                             <lsb>2</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_GT2</name>
                             <description>desc FLAG_GT2</description>
                             <msb>3</msb>
                             <lsb>3</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_LS1</name>
                             <description>desc FLAG_LS1</description>
                             <msb>4</msb>
                             <lsb>4</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_EQ1</name>
                             <description>desc FLAG_EQ1</description>
                             <msb>5</msb>
                             <lsb>5</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>FLAG_GT1</name>
                             <description>desc FLAG_GT1</description>
                             <msb>6</msb>
                             <lsb>6</lsb>
-                            <access>read-only</access>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -5977,6 +5886,45 @@
                             <msb>21</msb>
                             <lsb>20</lsb>
                             <access>read-write</access>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SWREQ</name>
+                    <description>desc SWREQ</description>
+                    <addressOffset>0x30</addressOffset>
+                    <size>32</size>
+                    <access>write-only</access>
+                    <resetValue>0x0</resetValue>
+                    <resetMask>0xFFFF80FF</resetMask>
+                    <fields>
+                        <field>
+                            <name>SWREQ</name>
+                            <description>desc SWREQ</description>
+                            <msb>7</msb>
+                            <lsb>0</lsb>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>SWRCFGREQ</name>
+                            <description>desc SWRCFGREQ</description>
+                            <msb>15</msb>
+                            <lsb>15</lsb>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>SWREQWP</name>
+                            <description>desc SWREQWP</description>
+                            <msb>23</msb>
+                            <lsb>16</lsb>
+                            <access>write-only</access>
+                        </field>
+                        <field>
+                            <name>SWRCFGWP</name>
+                            <description>desc SWRCFGWP</description>
+                            <msb>31</msb>
+                            <lsb>24</lsb>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -21747,8 +21695,8 @@
                             <access>read-write</access>
                         </field>
                         <field>
-                            <name>ENGC</name>
-                            <description>desc ENGC</description>
+                            <name>GCEN</name>
+                            <description>desc GCEN</description>
                             <msb>6</msb>
                             <lsb>6</lsb>
                             <access>read-write</access>
@@ -22351,8 +22299,8 @@
                             <access>read-write</access>
                         </field>
                         <field>
-                            <name>FREQ</name>
-                            <description>desc FREQ</description>
+                            <name>CKDIV</name>
+                            <description>desc CKDIV</description>
                             <msb>18</msb>
                             <lsb>16</lsb>
                             <access>read-write</access>
@@ -22430,7 +22378,7 @@
                     <size>32</size>
                     <access>read-write</access>
                     <resetValue>0x2200</resetValue>
-                    <resetMask>0xFF77FF</resetMask>
+                    <resetMask>0xFD77FF</resetMask>
                     <fields>
                         <field>
                             <name>TXE</name>
@@ -22507,13 +22455,6 @@
                             <description>desc FIFOR</description>
                             <msb>16</msb>
                             <lsb>16</lsb>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>CODECRC</name>
-                            <description>desc CODECRC</description>
-                            <msb>17</msb>
-                            <lsb>17</lsb>
                             <access>read-write</access>
                         </field>
                         <field>
@@ -34595,7 +34536,7 @@
                     <addressOffset>0x8</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
-                    <resetValue>0x80B3</resetValue>
+                    <resetValue>0x8033</resetValue>
                     <resetMask>0x8F77</resetMask>
                     <fields>
                         <field>
@@ -34757,8 +34698,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>SR2</name>
-                    <description>desc SR2</description>
+                    <name>CLR</name>
+                    <description>desc CLR</description>
                     <addressOffset>0x24</addressOffset>
                     <size>32</size>
                     <access>write-only</access>
@@ -37917,8 +37858,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRHUH</name>
-                    <description>desc OCMRHUH</description>
+                    <name>OCMRUH</name>
+                    <description>desc OCMRUH</description>
                     <addressOffset>0x24</addressOffset>
                     <size>16</size>
                     <access>read-write</access>
@@ -37998,8 +37939,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRLUL</name>
-                    <description>desc OCMRLUL</description>
+                    <name>OCMRUL</name>
+                    <description>desc OCMRUL</description>
                     <addressOffset>0x28</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
@@ -38135,8 +38076,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRHVH</name>
-                    <description>desc OCMRHVH</description>
+                    <name>OCMRVH</name>
+                    <description>desc OCMRVH</description>
                     <addressOffset>0x2C</addressOffset>
                     <size>16</size>
                     <access>read-write</access>
@@ -38216,8 +38157,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRLVL</name>
-                    <description>desc OCMRLVL</description>
+                    <name>OCMRVL</name>
+                    <description>desc OCMRVL</description>
                     <addressOffset>0x30</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
@@ -38353,8 +38294,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRHWH</name>
-                    <description>desc OCMRHWH</description>
+                    <name>OCMRWH</name>
+                    <description>desc OCMRWH</description>
                     <addressOffset>0x34</addressOffset>
                     <size>16</size>
                     <access>read-write</access>
@@ -38434,8 +38375,8 @@
                     </fields>
                 </register>
                 <register>
-                    <name>OCMRLWL</name>
-                    <description>desc OCMRLWL</description>
+                    <name>OCMRWL</name>
+                    <description>desc OCMRWL</description>
                     <addressOffset>0x38</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
@@ -39732,8 +39673,8 @@
             </addressBlock>
         </peripheral>
         <peripheral>
-            <name>TMR4CR</name>
-            <description>desc TMR4CR</description>
+            <name>TMR4_ECER</name>
+            <description>desc TMR4_ECER</description>
             <baseAddress>0x40055408</baseAddress>
             <addressBlock>
                 <offset>0x0</offset>
@@ -41489,20 +41430,19 @@
             </addressBlock>
         </peripheral>
         <peripheral>
-            <name>TMR6CR</name>
-            <description>desc TMR6CR</description>
-            <baseAddress>0x40018000</baseAddress>
-            <alternatePeripheral>TMR61</alternatePeripheral>
+            <name>TMR6_COMMON</name>
+            <description>desc TMR6_COMMON</description>
+            <baseAddress>0x40018300</baseAddress>
             <addressBlock>
                 <offset>0x0</offset>
-                <size>0x400</size>
+                <size>0x100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
                 <register>
                     <name>SSTAR</name>
                     <description>desc SSTAR</description>
-                    <addressOffset>0x3F4</addressOffset>
+                    <addressOffset>0xF4</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
                     <resetValue>0x0</resetValue>
@@ -41534,7 +41474,7 @@
                 <register>
                     <name>SSTPR</name>
                     <description>desc SSTPR</description>
-                    <addressOffset>0x3F8</addressOffset>
+                    <addressOffset>0xF8</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
                     <resetValue>0x0</resetValue>
@@ -41566,7 +41506,7 @@
                 <register>
                     <name>SCLRR</name>
                     <description>desc SCLRR</description>
-                    <addressOffset>0x3FC</addressOffset>
+                    <addressOffset>0xFC</addressOffset>
                     <size>32</size>
                     <access>read-write</access>
                     <resetValue>0x0</resetValue>

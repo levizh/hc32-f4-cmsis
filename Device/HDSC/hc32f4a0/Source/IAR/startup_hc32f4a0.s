@@ -6,9 +6,10 @@
 ;  Change Logs:
 ;  Date             Author          Notes
 ;  2022-03-31       CDT             First version
+;  2024-11-08       CDT             Added code of clear SRAMC status flags
 ; endverbatim
 ; *****************************************************************************
-; * Copyright (C) 2022-2023, Xiaohua Semiconductor Co., Ltd. All rights reserved.
+; * Copyright (C) 2022-2025, Xiaohua Semiconductor Co., Ltd. All rights reserved.
 ; *
 ; * This software component is licensed by XHSC under BSD 3-Clause license
 ; * (the "License"); You may not use this file except in compliance with the
@@ -201,6 +202,11 @@ __vector_table
                 PUBWEAK Reset_Handler
                 SECTION .text:CODE:NOROOT:REORDER(2)
 Reset_Handler
+;ClrSramSR
+                LDR     R0, =0x40050810
+                LDR     R1, =0x1FF
+                STR     R1, [R0]
+
                 LDR     R0, =SystemInit
                 BLX     R0
                 LDR     R0, =__iar_program_start

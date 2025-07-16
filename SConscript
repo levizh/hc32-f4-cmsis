@@ -67,7 +67,7 @@ elif GetDepend(['SOC_HC32F460PE']):
 
     path += [cwd + '/Device/HDSC/hc32f460/Include']
 
-elif GetDepend(['SOC_HC32F472MC']):
+elif GetDepend(['SOC_HC32F472PE']):
 
     src = Split('''
     Device/HDSC/hc32f472/Source/system_hc32f472.c

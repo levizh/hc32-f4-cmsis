@@ -9,10 +9,6 @@
     <loader>./FlashHC32F4A8_otp.flash</loader>
     <range>CODE 0x03000000 0x030017FF</range>
   </pass>
-  <pass>
-    <loader>./FlashHC32F4A8_qspi.flash</loader>
-    <range>CODE 0x98000000 0x987FFFFF</range>
-  </pass>
 </flash_board>
 
 

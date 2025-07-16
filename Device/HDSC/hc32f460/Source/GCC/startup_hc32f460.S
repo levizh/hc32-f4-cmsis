@@ -6,9 +6,11 @@
 ;  Change Logs:
 ;  Date             Author          Notes
 ;  2022-03-31       CDT             First version
+;  2024-11-08       CDT             Added code of clear SRAMC status flags
+;                                   Call static constructors for C++
 ; endverbatim
 ; *****************************************************************************
-; * Copyright (C) 2022-2023, Xiaohua Semiconductor Co., Ltd. All rights reserved.
+; * Copyright (C) 2022-2025, Xiaohua Semiconductor Co., Ltd. All rights reserved.
 ; *
 ; * This software component is licensed by XHSC under BSD 3-Clause license
 ; * (the "License"); You may not use this file except in compliance with the
@@ -262,6 +264,11 @@ Reset_Handler:
  *
  * All addresses must be aligned to 4 bytes boundary.
  */
+ClrSramSR:
+                ldr         r0, =0x40050810
+                ldr         r1, =0x1F
+                str         r1, [r0]
+
                 /* Copy data from read only memory to RAM. */
 CopyData:
                 ldr         r1, =__etext
@@ -347,6 +354,8 @@ SetSRAM3Wait:
                 mov         r1, #0x76
                 str         r1, [r0]
 
+                /* Call static constructors */
+                bl          __libc_init_array
                 /* Call the clock system initialization function. */
                 bl          SystemInit
                 /* Call the application's entry point. */

@@ -8,9 +8,10 @@
    Date             Author          Notes
    2022-03-31       CDT             First version
    2022-10-31       CDT             Delete the __low_level_init function of IAR and $Sub$$main function of MDK
+   2024-11-08       CDT             Modify GPIO configuration value of QSPI
  @endverbatim
  *******************************************************************************
- * Copyright (C) 2022-2023, Xiaohua Semiconductor Co., Ltd. All rights reserved.
+ * Copyright (C) 2022-2025, Xiaohua Semiconductor Co., Ltd. All rights reserved.
  *
  * This software component is licensed by XHSC under BSD 3-Clause license
  * (the "License"); You may not use this file except in compliance with the
@@ -168,12 +169,12 @@ __WEAKDEF void SystemInit_QspiMem(void)
     /* QSPI configure */
     CM_GPIO->PWPR = 0xA501U;
     /* High driver */
-    CM_GPIO->PCRC7  = 0x0120U;
-    CM_GPIO->PCRC6  = 0x0120U;
-    CM_GPIO->PCRB13 = 0x0120U;
-    CM_GPIO->PCRB12 = 0x0120U;
-    CM_GPIO->PCRB10 = 0x0120U;
-    CM_GPIO->PCRB2  = 0x0120U;
+    CM_GPIO->PCRC7  = 0x0020U;
+    CM_GPIO->PCRC6  = 0x0020U;
+    CM_GPIO->PCRB13 = 0x0020U;
+    CM_GPIO->PCRB12 = 0x0020U;
+    CM_GPIO->PCRB10 = 0x0020U;
+    CM_GPIO->PCRB2  = 0x0020U;
     /* Set function */
     CM_GPIO->PFSRC7  = 0x0012U;
     CM_GPIO->PFSRC6  = 0x0012U;
