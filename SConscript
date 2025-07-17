@@ -4,12 +4,13 @@ from building import *
 # get current directory
 cwd = GetCurrentDir()
 path = [cwd + '/Include']
+src = []
 
 # The set of source files associated with this SConscript file.
 
 if GetDepend(['SOC_HC32F4A0SI']):
 
-    src = Split('''
+    src += Split('''
     Device/HDSC/hc32f4a0/Source/system_hc32f4a0.c
     ''')
 
@@ -24,7 +25,7 @@ if GetDepend(['SOC_HC32F4A0SI']):
 
 elif GetDepend(['SOC_HC32F448MC']):
 
-    src = Split('''
+    src += Split('''
     Device/HDSC/hc32f448/Source/system_hc32f448.c
     ''')
 
@@ -39,7 +40,7 @@ elif GetDepend(['SOC_HC32F448MC']):
 
 elif GetDepend(['SOC_HC32F4A8SI']):
 
-    src = Split('''
+    src += Split('''
     Device/HDSC/hc32f4a8/Source/system_hc32f4a8.c
     ''')
 
@@ -54,7 +55,7 @@ elif GetDepend(['SOC_HC32F4A8SI']):
 
 elif GetDepend(['SOC_HC32F460PE']):
 
-    src = Split('''
+    src += Split('''
     Device/HDSC/hc32f460/Source/system_hc32f460.c
     ''')
 
@@ -67,9 +68,9 @@ elif GetDepend(['SOC_HC32F460PE']):
 
     path += [cwd + '/Device/HDSC/hc32f460/Include']
 
-elif GetDepend(['SOC_HC32F472PE']):
+elif GetDepend(['SOC_HC32F472MC']):
 
-    src = Split('''
+    src += Split('''
     Device/HDSC/hc32f472/Source/system_hc32f472.c
     ''')
 
